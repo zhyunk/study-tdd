@@ -15,5 +15,12 @@ dependencies {
 }
 
 tasks.test {
-    useJUnitPlatform()
+    useJUnitPlatform {
+        includeTags("includeTag")
+        excludeTags("notIncludeTag")
+    }
+}
+
+tasks.withType(JavaCompile::class) {
+    options.encoding="UTF-8"
 }
