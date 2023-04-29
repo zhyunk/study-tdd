@@ -4,6 +4,7 @@ public class StringCalc {
     int[] nums;
     String[] signs;
 
+    StringCalc(){}
     StringCalc(String expression) {
         nums  = getNums(expression);
         signs = getSigns(expression);
