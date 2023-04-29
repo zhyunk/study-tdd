@@ -16,8 +16,8 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform {
-        includeTags("includeTag")
-        excludeTags("notIncludeTag")
+//        includeTags("includeTag")
+//        excludeTags("notIncludeTag")
     }
 }
 

@@ -1,9 +1,22 @@
 import java.util.Arrays;
 
 public class StringCalc {
-    public int sum(String expression) {
-        String[] nums = expression.split("[+\\-/*]");
-        System.out.println(Arrays.toString(nums));
-        return 0;
+    int[] nums;
+    String[] signs;
+
+    StringCalc(String expression) {
+        nums  = getNums(expression);
+        signs = getSigns(expression);
+    }
+
+    public int[] getNums(String expression) {
+        return Arrays.stream(expression.split("[+\\-/*]"))
+                     .mapToInt(Integer::parseInt)
+                     .toArray();
+    }
+
+    public String[] getSigns(String expression) {
+        return expression.replaceAll("[0-9]", "")
+                         .split("");
     }
 }
