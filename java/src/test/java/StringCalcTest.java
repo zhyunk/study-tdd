@@ -2,6 +2,8 @@ import org.junit.jupiter.api.*;
 
 import java.util.Arrays;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 @DisplayName("StringCalc_클래스의_테스트")
 public class StringCalcTest {
     static StringCalc calc;
@@ -18,13 +20,13 @@ public class StringCalcTest {
         @Test
         @DisplayName("CASE 1 : 숫자 잘 분리 되었는지_확인")
         public void nums1() {
-            System.out.println(Arrays.toString(calc.getNums(expression)));
+            assertArrayEquals(new int[]{12, 13, 55, 2}, calc.getNums(expression));
         }
 
         @Test
         @DisplayName("CASE 1 : 연산자 잘 분리 되었는지_확인")
         public void signs1() {
-            System.out.println(Arrays.toString(calc.getSigns(expression)));
+            assertArrayEquals(new String[]{"+", "-", "*"}, calc.getSigns(expression));
         }
     }
 
@@ -35,13 +37,14 @@ public class StringCalcTest {
         @Test
         @DisplayName("CASE 2 : 숫자 잘 분리 되었는지_확인")
         public void nums2() {
-            System.out.println(Arrays.toString(calc.getNums(expression)));
+            assertArrayEquals(new int[]{321321231, 654678, 321321}, calc.getNums(expression));
+
         }
 
         @Test
         @DisplayName("CASE 2 : 연산자 잘 분리 되었는지_확인")
         public void signs2() {
-            System.out.println(Arrays.toString(calc.getSigns(expression)));
+            assertArrayEquals(new String[]{"+", "-"}, calc.getSigns(expression));
         }
     }
 
